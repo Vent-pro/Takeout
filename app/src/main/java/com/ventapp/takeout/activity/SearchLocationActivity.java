@@ -3,7 +3,6 @@ package com.ventapp.takeout.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.renderscript.ScriptGroup;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,7 +13,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -24,10 +22,7 @@ import com.ventapp.takeout.gson.LiteAddress;
 import com.ventapp.takeout.util.HttpUtility;
 import com.ventapp.takeout.util.Utility;
 
-import org.w3c.dom.Text;
-
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -36,7 +31,7 @@ import butterknife.OnClick;
 import okhttp3.Call;
 import okhttp3.Response;
 
-public class SearchLocationActivity extends AppCompatActivity {
+public class SearchLocationActivity extends BaseActivity {
 
     private static String TAG="SearchLocationTAG";
 
@@ -98,16 +93,12 @@ public class SearchLocationActivity extends AppCompatActivity {
                     public void run() {
                         try{
                             String responseString=response.body().string();
-                            List<LiteAddress> liteAddressList=Utility.handleSearchLocationReponse(responseString);
-                            resultRecyclerView.setLayoutManager(new LinearLayoutManager(SearchLocationActivity.this){
-                                @Override
-                                public boolean canScrollVertically() {
-                                    return false;
-                                }
-                            });
+                            Log.d(TAG, "onResponse: "+responseString);
+                            List<LiteAddress> liteAddressList=Utility.handleSearchLocationResponse(responseString);
+                            resultRecyclerView.setLayoutManager(new LinearLayoutManager(SearchLocationActivity.this));
                             SearchLocationResultAdapter resultAdapter=new SearchLocationResultAdapter(liteAddressList);
                             resultRecyclerView.setAdapter(resultAdapter);
-                        }catch(IOException e){
+                        }catch(Exception e){
                             e.printStackTrace();
                         }
                     }
@@ -116,9 +107,13 @@ public class SearchLocationActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call call, IOException e) {
-
+                Log.d(TAG, "onFailure: "+e.getMessage());
             }
         });
+        hideSoftInput();
+    }
+
+    private void hideSoftInput(){
         InputMethodManager manager = ((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE));
         if (manager != null)
             manager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);

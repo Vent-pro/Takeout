@@ -1,5 +1,13 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.mob.sdk'
 
+
+
+MobSDK{
+    appKey "\\22e90962803173"
+    appSecret "3aae7386d39de8011d25254497161050"
+    SMSSDK{}
+}
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
@@ -42,5 +50,6 @@ dependencies {
     //glide，比较好的版本，Matisse版本，配合glide3.7.0，因为后面的glide版本没有了asbitmap等方法
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.google.code.gson:gson:2.7'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
     testCompile 'junit:junit:4.12'
 }

@@ -1,7 +1,7 @@
 package com.ventapp.takeout.gson;
 
 /**
- * Created by bowenshen on 2020/3/25.
+ * Created by bowenshen on 2020/fruit/25.
  */
 
 public class DetailedInfo {

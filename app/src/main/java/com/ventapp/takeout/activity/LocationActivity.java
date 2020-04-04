@@ -23,10 +23,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Created by bowenshen on 2020/3/19.
+ * Created by bowenshen on 2020/fruit/19.
  */
 
-public class LocationActivity extends AppCompatActivity{
+public class LocationActivity extends BaseActivity{
 
     private static String TAG="LocationActivity";
 
@@ -118,7 +118,7 @@ public class LocationActivity extends AppCompatActivity{
                 requestLocation();
                 break;
             case R.id.button_back:
-                Log.d(TAG, "onViewClick: back");
+                Log.d(TAG, "onViewClick: backToLoginActivity");
                 finish();
                 break;
             case R.id.button_search_location:

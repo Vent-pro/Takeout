@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.zip.Inflater;
 
 /**
- * Created by bowenshen on 2020/3/24.
+ * Created by bowenshen on 2020/fruit/24.
  */
 
 public class SearchLocationHistoryAdapter extends RecyclerView.Adapter<SearchLocationHistoryAdapter.ViewHolder> {

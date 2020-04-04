@@ -8,13 +8,14 @@ import android.widget.TextView;
 
 import com.ventapp.takeout.R;
 import com.ventapp.takeout.gson.LiteAddress;
+import com.ventapp.takeout.util.Utility;
 
 import org.w3c.dom.Text;
 
 import java.util.List;
 
 /**
- * Created by bowenshen on 2020/3/24.
+ * Created by bowenshen on 2020/fruit/24.
  */
 
 public class SearchLocationResultAdapter extends RecyclerView.Adapter<SearchLocationResultAdapter.ViewHolder> {
@@ -38,13 +39,7 @@ public class SearchLocationResultAdapter extends RecyclerView.Adapter<SearchLoca
         holder.poiNameText.setText(liteAddress.getName());
         holder.addressText.setText(liteAddress.getAddress());
         double distance=liteAddress.getDistance();
-        String distanceString="";
-        if(distance>=1000){
-            distance=((double)Math.round(distance/10))/100;
-            distanceString=distance+"km";
-        }else{
-            distanceString=(int)distance+"m";
-        }
+        String distanceString=Utility.getDistanceString(distance);
         holder.distanceText.setText(distanceString);
     }
 

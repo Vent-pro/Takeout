@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Created by bowenshen on 2020/3/23.
+ * Created by bowenshen on 2020/fruit/23.
  */
 
 public class LiteAddress implements Parcelable{

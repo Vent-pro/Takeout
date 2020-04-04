@@ -9,10 +9,10 @@ import com.ventapp.takeout.R;
 import butterknife.ButterKnife;
 
 /**
- * Created by bowenshen on 2020/3/17.
+ * Created by bowenshen on 2020/fruit/17.
  */
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

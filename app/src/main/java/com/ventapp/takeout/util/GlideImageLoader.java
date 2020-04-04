@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide;
 import com.youth.banner.loader.ImageLoader;
 
 /**
- * Created by bowenshen on 2020/3/22.
+ * Created by bowenshen on 2020/fruit/22.
  */
 
 public class GlideImageLoader extends ImageLoader {

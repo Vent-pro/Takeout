@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">馋了么</string>
+    <string name="home">外卖</string>
+    <string name="member">会员</string>
+    <string name="orders">订单</string>
+    <string name="mine">我的</string>
 </resources>

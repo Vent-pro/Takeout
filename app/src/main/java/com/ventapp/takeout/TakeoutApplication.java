@@ -9,10 +9,10 @@ import android.content.Context;
 
 public class TakeoutApplication extends Application {
 
-    public final static String WEB_AK="NjgQKeDynZObQxNEYbu1Oh0SnEetDzBo";
+
+    public final static String SERVER_URI="http://127.0.0.1/";
 
     private static Context context;
-
 
     @Override
     public void onCreate() {

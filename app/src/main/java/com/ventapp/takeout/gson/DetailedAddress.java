@@ -3,7 +3,7 @@ package com.ventapp.takeout.gson;
 import android.util.Log;
 
 /**
- * Created by bowenshen on 2020/3/25.
+ * Created by bowenshen on 2020/fruit/25.
  */
 
 public class DetailedAddress extends LiteAddress{
